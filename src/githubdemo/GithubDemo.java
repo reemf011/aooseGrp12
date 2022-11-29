@@ -16,9 +16,8 @@ public class GithubDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(" aoose");
-        System.out.println(" aoose");
-        System.out.println(" HII");
+        System.out.println(" aoose, farah");
+       
     }
     
 }
