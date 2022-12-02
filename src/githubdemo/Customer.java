@@ -11,19 +11,11 @@ package githubdemo;
  */
 public class Customer implements  Observer  {
     String creditCardinfo;
-    private float SpecialOffers;
-    private Subject Admin;
-    public Customer(Subject md){
-    this.Admin = md;
-    Admin.addObserver(this);
-  }
-     @Override
-     public void update(float s){
-         this.SpecialOffers = s;
-        System.out.println("Exclusive Offers: Special Discounts on Luxurious Monaco Hotels "+ SpecialOffers);
+  
+       @Override
+       public void update(float SpecialOffers) {
+              System.out.println("ALERT!!: EXCLUSIVE DISCOUNT"+ SpecialOffers+ "%");
        }
-
-     
 
     public String getCreditCardinfo() {
         return creditCardinfo;

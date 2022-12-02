@@ -16,13 +16,14 @@ public class GithubDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    Admin md=new Admin();
-    Customer ac=new Customer(md);
-    md.SpecialOffers(20);
-    md.SpecialOffers(15);
-    md.SpecialOffers(55);
-  }
-       
+         Customer onlineMedia = new Customer();
+              Admin personalLoan = new Admin("Special Offer Discount", 12.5f, "Perecent");
+              personalLoan.registerObserver(onlineMedia);
+              personalLoan.setSpecialOffers(20f);
+              personalLoan.setSpecialOffers(30f);
+              personalLoan.setSpecialOffers(50f);
+         }
+    
     }
     
 

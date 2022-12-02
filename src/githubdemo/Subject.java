@@ -10,21 +10,16 @@ package githubdemo;
  *
  * @author reemf011
  */
-public interface Subject {
-    //methods to register and unregister observers
-	public void addObserver(Observer observer);
-	public void RemoveObserver(Observer observer);
-	
-	//method to notify observers of change
-	public void notifyObservers();
-	/*
-	//method to get updates from subject
-	public Object getUpdate(Observer obj);
-*/
 
+interface Subject {
+       public void registerObserver(Observer observer);
+
+       public void removeObserver(Observer observer);
+
+       public void notifyObservers();
 }
 
 
 
+
 	
-}

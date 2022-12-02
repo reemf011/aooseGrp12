@@ -9,6 +9,6 @@ package githubdemo;
  *
  * @author DeS
  */
-public interface Observer {
-    public void update(Message M);
+interface Observer {
+       public void update(float SpecialOffers);
 }

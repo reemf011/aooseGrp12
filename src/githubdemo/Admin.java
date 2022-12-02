@@ -14,34 +14,58 @@ package githubdemo;
 import java.util.ArrayList;
 
  public class Admin implements Subject {
-  private float SpecialOffers;
-  private ArrayList observers;
+       private ArrayList<Observer> observers = new ArrayList<Observer>();
+       private String type;
+       private float SpecialOffers;
+       private String System;
 
-  public Admin(){
-    observers = new ArrayList();
-  }
-  public void addObserver(Observer observer){
-    observers.add(observer);
-  }
-  public void deleteObserver(Observer observer){
-    int i = observers.indexOf(observer);
-    if(i>=0){
-      observers.remove(i);
-    }
-  }
-  public void notifyObservers(){
-    for (int i=0;i<observers.size();i++){
-      Observer o = (Observer)observers.get(i);
-      o.update(SpecialOffers);
-    }
-  }
-  public void SpecialOffers(float s){
-    this.SpecialOffers = s;
-    update();
-  }
-  public void update(){
-    notifyObservers();
-  }
+       public Admin(String type, float SpecialOffers, String System) {
+              this.type = type;
+              this.SpecialOffers = SpecialOffers;
+              this.System = System;
+       }
+
+       public float getSpecialOffers() {
+              return SpecialOffers;
+       }
+
+       public void setSpecialOffers(float SpecialOffers) {
+              this.SpecialOffers = SpecialOffers;
+              notifyObservers();
+       }
+
+       public String getSystem() {
+              return this.System;
+       }
+
+       public String getType() {
+              return this.type;
+       }
+
+       @Override
+       public void registerObserver(Observer observer) {
+              observers.add(observer);
+
+       }
+
+       @Override
+       public void removeObserver(Observer observer) {
+              observers.remove(observer);
+
+       }
+
+       @Override
+       public void notifyObservers() {
+              for (Observer ob : observers) {
+                     /*System.out.println("Notifying Observers on special offers discount");
+                     */
+                     ob.update(this.SpecialOffers);
+           
+              }
+
+       }
+
+
     Admin instance;
     public Admin getInstance(){return null;}
     public void generatereport(){}
@@ -50,10 +74,7 @@ import java.util.ArrayList;
 
     public void generateSalesReport(){}
 
-    @Override
-    public void RemoveObserver(Observer observer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
 
 }
