@@ -10,8 +10,9 @@ package githubdemo;
  * @author DeS
  */
 public class Customer implements  Observer  {
-     String creditCardinfo;
-     private float SpecialOffers;
+    String creditCardinfo;
+    private float SpecialOffers;
+    private Subject Admin;
     public Customer(Subject md){
     this.Admin = md;
     Admin.addObserver(this);

@@ -16,7 +16,7 @@ public interface Subject {
 	public void RemoveObserver(Observer observer);
 	
 	//method to notify observers of change
-	public void notifyObservers(Message M);
+	public void notifyObservers();
 	/*
 	//method to get updates from subject
 	public Object getUpdate(Observer obj);

@@ -13,7 +13,7 @@ package githubdemo;
  
 import java.util.ArrayList;
 
-public abstract class Admin implements Subject {
+ public class Admin implements Subject {
   private float SpecialOffers;
   private ArrayList observers;
 
@@ -49,6 +49,13 @@ public abstract class Admin implements Subject {
     public void displayreportedbooking(){}
 
     public void generateSalesReport(){}
+
+    @Override
+    public void RemoveObserver(Observer observer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }
 
 
