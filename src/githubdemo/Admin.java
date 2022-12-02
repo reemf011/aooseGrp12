@@ -6,14 +6,15 @@
 package githubdemo;
 
 import java.util.ArrayList;
+import java.util.Observer;
 
 /**
  *
  * @author DeS
  */
-public class Admin {
+public class Admin implements Subject {
     Admin instance;
-    ArrayList<observer> observers;
+    ArrayList<Observer> observers = new ArrayList<Observer>();
     public Admin getInstance(){return null;}
     public void generatereport(){}
     public void sendcopun(){}

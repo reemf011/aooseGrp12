@@ -3,14 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package phase3;
+
+package githubdemo;
 
 /**
  *
- * @author DeS
+ * @author reemf011
  */
 public interface Subject {
-    public void addObserver(observer x);
-    public void removeObserver(observer y);
-    public void NotifyObserver(String z);
+    //methods to register and unregister observers
+	public void addObserver(Observer obj);
+	public void RemoveObserver(Observer obj);
+	
+	//method to notify observers of change
+	public void notifyObservers();
+	
+	//method to get updates from subject
+	public Object getUpdate(Observer obj);
+}
+
+
+
+	
 }
