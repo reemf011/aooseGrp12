@@ -16,8 +16,13 @@ public class GithubDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(" aoose, Reem");
+    Admin md=new Admin();
+    Customer ac=new Customer(md);
+    md.SpecialOffers(20);
+    md.SpecialOffers(15);
+    md.SpecialOffers(55);
+  }
        
     }
     
-}
+

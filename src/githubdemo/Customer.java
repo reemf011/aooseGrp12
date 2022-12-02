@@ -9,13 +9,17 @@ package githubdemo;
  *
  * @author DeS
  */
-public class Customer implements  observer  {
+public class Customer implements  Observer  {
      String creditCardinfo;
-     private String offers;
-     
+     private float SpecialOffers;
+    public Customer(Subject md){
+    this.Admin = md;
+    Admin.addObserver(this);
+  }
      @Override
-     public void update(String offers){
-        System.out.println("Exclusive Offers: Special Discounts on Luxurious Monaco Hotels "+ offers);
+     public void update(float s){
+         this.SpecialOffers = s;
+        System.out.println("Exclusive Offers: Special Discounts on Luxurious Monaco Hotels "+ SpecialOffers);
        }
 
      

@@ -9,6 +9,6 @@ package githubdemo;
  *
  * @author DeS
  */
-public interface observer {
-    public void update(String a);
+public interface Observer {
+    public void update(Message M);
 }

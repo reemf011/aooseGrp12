@@ -12,14 +12,16 @@ package githubdemo;
  */
 public interface Subject {
     //methods to register and unregister observers
-	public void addObserver(Observer obj);
-	public void RemoveObserver(Observer obj);
+	public void addObserver(Observer observer);
+	public void RemoveObserver(Observer observer);
 	
 	//method to notify observers of change
-	public void notifyObservers();
-	
+	public void notifyObservers(Message M);
+	/*
 	//method to get updates from subject
 	public Object getUpdate(Observer obj);
+*/
+
 }
 
 
