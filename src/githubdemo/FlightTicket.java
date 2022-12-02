@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package phase3;
+package githubdemo;
 
 import java.util.ArrayList;
 
@@ -18,5 +18,5 @@ public class FlightTicket {
     String arrival_Airport;
     String arrival_date;
     String departure_Airport;
-    ArrayList<ChooseSeat>availableSeats;
+    ArrayList<Chooseseatinterface>availableSeats;
 }
