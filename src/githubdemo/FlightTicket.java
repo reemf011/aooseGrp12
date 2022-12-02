@@ -18,5 +18,5 @@ public class FlightTicket {
     String arrival_Airport;
     String arrival_date;
     String departure_Airport;
-    ArrayList<ChooseSeat>availableSeats;
+    ArrayList<Chooseseatinterface>availableSeats;
 }

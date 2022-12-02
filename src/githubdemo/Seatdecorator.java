@@ -9,8 +9,12 @@ package githubdemo;
  *
  * @author DeS
  */
-public class Seatdecorator {
-    ChooseSeat wrapee;
-    public void Seatdecorator(){}
-    public void reserve(){}
+public abstract class Seatdecorator implements Chooseseatinterface {
+    Chooseseatinterface wrapee;
+    public void Seatdecorator(Chooseseatinterface wrapee){
+     this.wrapee = wrapee;
+    }
+    public void reserve(){
+    wrapee.Reserve();
+    }
 }

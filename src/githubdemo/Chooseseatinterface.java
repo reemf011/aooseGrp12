@@ -9,11 +9,6 @@ package githubdemo;
  *
  * @author DeS
  */
-public class ChooseSeat {
-    int SeatNumber;
-    String Seat_Position;
-    double seat_size;
-    String seat_Type;
-    public void DisplaySeatsType(){}
-    public void Reserve(){}
+public interface Chooseseatinterface {
+     void Reserve();
 }
