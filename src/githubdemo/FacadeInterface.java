@@ -5,10 +5,14 @@
  */
 package githubdemo;
 
+import java.rmi.RemoteException;
+
 /**
  *
  * @author reemf011
  */
 public interface FacadeInterface {
-    
+       public void SetBookingData(String title, String code, String Desc)throws RemoteException;
+   public String getBookingData()throws RemoteException;
+   public BookingDTO getCourse() throws RemoteException;
 }
