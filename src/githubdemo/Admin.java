@@ -13,7 +13,7 @@ package githubdemo;
  
 import java.util.ArrayList;
 
- public class Admin implements Subject {
+ public class Admin extends User implements Subject {
        private ArrayList<Observer> observers = new ArrayList<Observer>();
        private String type;
        private float SpecialOffers;

@@ -8,15 +8,9 @@ package githubdemo;
  *
  * @author DeS
  */
-public class Customer implements  Observer  {
+public class Customer extends User implements  Observer  {
     String creditCardinfo;
-
-  
-       @Override
-       public void update(float SpecialOffers) {
-              System.out.println("ALERT!!: EXCLUSIVE DISCOUNT"+ SpecialOffers+ "%");
-       }
-
+    
     public String getCreditCardinfo() {
         return creditCardinfo;
     }
@@ -24,6 +18,10 @@ public class Customer implements  Observer  {
     public void setCreditCardinfo(String creditCardinfo) {
         this.creditCardinfo = creditCardinfo;
     }
+     @Override
+       public void update(float SpecialOffers) {
+              System.out.println("ALERT!!: EXCLUSIVE DISCOUNT"+ SpecialOffers+ "%");
+       }
     public void displayReportedBoookings(String oldReportedBooking, String upcomingReportedBooking){}
     public void selectFilter(){}
     public void Search(){}

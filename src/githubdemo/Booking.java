@@ -10,6 +10,7 @@ package githubdemo;
  * @author reemf011
  */
 public class Booking {
+    
     int booking_Id;
     String Booking_Type;
     String booking_date;

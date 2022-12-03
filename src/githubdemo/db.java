@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import org.bson.Document;
 
 public class db {
-    private MongoClient client;
+   /* private MongoClient client;
     private MongoDatabase database;
     private MongoCollection<Document> collection;
     private Gson gson = new Gson();
@@ -29,18 +29,22 @@ public class db {
 
         // Initialize
         client = new MongoClient();
-        database = client.getDatabase("Company"); // Database name
-        collection = database.getCollection("Depertmant"); // Collection name
+        database = client.getDatabase("ReservationSystem"); // Database name
+        collection = database.getCollection("Booking"); // Collection name
         
     
-  //Question 1
-    public void insertStaff(Staff s) {
+    MongoClient mongoclient= new MongoClient("localhost",27017);
+      MongoDatabase mongodatabase=mongoclient.getDatabase("ICS");
+      MongoCollection mongocollection=mongodatabase.getCollection("SoftwareEngineering")
+    */
+
+    public void insertStaff(Booking s) {
         collection.insertOne(Document.parse(gson.toJson(s)));
-        System.out.println("Staff inserted.");
+        System.out.println("User inserted.");
     }
     
-    //Question 2
-        public Staff getStaffByMail(String email) {
+
+        public Booking getStaffByMail(String email) {
         Document doc = collection.find(Filters.eq("email", email)).first();
         Staff result = gson.fromJson(doc.toJson(), Staff.class);
         return result;

@@ -13,6 +13,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author DeS
  */
+
  public class BookingFacade extends UnicastRemoteObject implements FacadeInterface {
      Booking c;
     public BookingFacade() throws RemoteException {
@@ -40,6 +41,7 @@ import java.rmi.server.UnicastRemoteObject;
         BookingDTO dto=new BookingDTO(c.getBooking_Id(), c.getBooking_date(), c.getBooking_Status());
         return dto;
     }
+
     
  }
     
