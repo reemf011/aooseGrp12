@@ -28,6 +28,10 @@ public class Customer implements  Observer  {
     public void selectFilter(){}
     public void Search(){}
     public void SendFeedback(String Feedbackdetails){}
+
+    public Customer(String creditCardinfo) {
+        this.creditCardinfo = creditCardinfo;
+    }
    
     
 }
