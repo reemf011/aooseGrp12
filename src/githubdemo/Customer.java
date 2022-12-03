@@ -11,6 +11,7 @@ package githubdemo;
  */
 public class Customer implements  Observer  {
     String creditCardinfo;
+
   
        @Override
        public void update(float SpecialOffers) {
@@ -29,9 +30,6 @@ public class Customer implements  Observer  {
     public void Search(){}
     public void SendFeedback(String Feedbackdetails){}
 
-    public Customer(String creditCardinfo) {
-        this.creditCardinfo = creditCardinfo;
-    }
-   
+
     
 }

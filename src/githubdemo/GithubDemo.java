@@ -16,7 +16,7 @@ public class GithubDemo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Customer onlineMedia = new Customer();
+             Customer onlineMedia = new Customer();
               Admin personalLoan = new Admin("Special Offer Discount", 12.5f, "Perecent");
               personalLoan.registerObserver(onlineMedia);
               personalLoan.setSpecialOffers(20f);
