@@ -12,7 +12,7 @@ import java.rmi.RemoteException;
  * @author reemf011
  */
 public interface FacadeInterface {
-       public void SetBookingData(String Booking, String code, String Desc)throws RemoteException;
+   public void SetBookingData(int booking_ID, String booking_date, String booking_status)throws RemoteException;
    public String getBookingData()throws RemoteException;
    public BookingDTO getCourse() throws RemoteException;
 }
