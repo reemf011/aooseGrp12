@@ -9,9 +9,19 @@ package githubdemo;
  *
  * @author DeS
  */
-public class PayPal {
-    String Email;
-    int PayPalPassword;
-    public void PayPalInfo(int PayPalPassword,String Email){}
-    public void PaymentInfo(int PayPalPassword){}
+public class PayPal implements PaymentStrategy{
+    
+    private String email;
+    private String password;
+ 
+    public PayPal(String emaill, String pwd){
+        this.email=emaill;
+        this.password=pwd;
+    }
+
+    @Override
+    public void pay(String amount) {
+         System.out.println(amount + "$ paid using Paypal.");
+    }
+ 
 }
