@@ -11,7 +11,7 @@ package githubdemo;
  */
 public class Customer implements  Observer  {
     String creditCardinfo;
-  System.out.println("ALERT!!: EXCLUSIVE DISCOUNT");
+  
        @Override
        public void update(float SpecialOffers) {
               System.out.println("ALERT!!: EXCLUSIVE DISCOUNT"+ SpecialOffers+ "%");
