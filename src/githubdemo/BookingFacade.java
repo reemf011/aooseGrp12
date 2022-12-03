@@ -13,44 +13,33 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author DeS
  */
-public class BookingFacade extends UnicastRemoteObject implements FacadeInterface {
-    public void getBookingDetails(){}
-    public void setBooking(int booking_Id, String Booking_Type, String booking_date, String booking_Status, String booking_timr){}
-    public BookingDTO getbookingDTO(){
-        BookingDTO b = null;
-        return b;
+ public class BookingFacade extends UnicastRemoteObject implements FacadeInterface {
+     Booking c;
+    public BookingFacade() throws RemoteException {
+        c= new Booking(1, "", "","", "");
+    }
+    @Override
+    public void SetBookingData(int booking_Id,String booking_date, String booking_Status)throws RemoteException {
+    c.setBooking_Id(booking_Id);
+   // c.setBooking_Type(Booking_Type);
+    c.setBooking_date(booking_date);
+    c.setBooking_Status(booking_Status);
+   // c.setBooking_time(booking_time);
+    
     }
     
+     @Override
+    public String getBookingData() throws RemoteException{
+        String BookingData=c.getBooking_Id()+c.getBooking_Type()+c.getBooking_date()+c.getBooking_Status()+c.getBooking_time();
+        return BookingData;
+    }
     
-    /*
-    extends UnicastRemoteObject implements FacadeInterface {
-
-    Course c;
-    public CourseFacade() throws RemoteException {
-        c= new Course("", "", "");
-    }
-
-    @Override
-    public void SetCourseData(String title, String code, String Desc)throws RemoteException {
-        c.setCode(code);
-        c.setDescription(Desc);
-        c.setTitle(title);
-    }
-
-    @Override
-    public String getCouseData() throws RemoteException{
-        String CourseData=c.getTitle()+c.getCode()+c.getDescription();
-        return CourseData;
-    }
-
-    @Override
-    public CourseDTO getCourse() throws RemoteException {
+     @Override
+    public BookingDTO getBooking() throws RemoteException {
         
-        CourseDTO dto=new CourseDTO(c.getTitle(), c.getDescription());
+        BookingDTO dto=new BookingDTO(c.getBooking_Id(), c.getBooking_date(), c.getBooking_Status());
         return dto;
     }
     
+ }
     
-    
-    */
-}

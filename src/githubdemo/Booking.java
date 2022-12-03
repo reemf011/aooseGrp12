@@ -65,6 +65,6 @@ public class Booking {
     public void setBooking_time(String booking_time) {
         this.booking_time = booking_time;
     }
-    
+
 
 }

@@ -9,6 +9,6 @@ package githubdemo;
  *
  * @author reemf011
  */
-public class FacadeInterface {
+public interface FacadeInterface {
     
 }
