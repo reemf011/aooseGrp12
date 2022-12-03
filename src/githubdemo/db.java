@@ -32,7 +32,7 @@ public class db {
         database = client.getDatabase("Company"); // Database name
         collection = database.getCollection("Depertmant"); // Collection name
         
-    }
+    
   //Question 1
     public void insertStaff(Staff s) {
         collection.insertOne(Document.parse(gson.toJson(s)));
@@ -80,7 +80,7 @@ public class db {
         client.close();
     }
 }
-}
+
     
 
 
