@@ -18,34 +18,19 @@ import java.util.logging.Logger;
 import org.bson.Document;
 
 public class db {
-   /* private MongoClient client;
-    private MongoDatabase database;
-    private MongoCollection<Document> collection;
-    private Gson gson = new Gson();
-    
    
-      Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
-        mongoLogger.setLevel(Level.SEVERE);
-
-        // Initialize
-        client = new MongoClient();
-        database = client.getDatabase("ReservationSystem"); // Database name
-        collection = database.getCollection("Booking"); // Collection name
-        
-    
     MongoClient mongoclient= new MongoClient("localhost",27017);
       MongoDatabase mongodatabase=mongoclient.getDatabase("ICS");
-      MongoCollection mongocollection=mongodatabase.getCollection("SoftwareEngineering")
-    */
-
-    public void insertStaff(Booking s) {
-        collection.insertOne(Document.parse(gson.toJson(s)));
+      MongoCollection mongocollection=mongodatabase.getCollection("SoftwareEngineering");
+      
+    public void insertBooking(Booking s) {
+        mongocollection.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("User inserted.");
     }
     
 
         public Booking getStaffByMail(String email) {
-        Document doc = collection.find(Filters.eq("email", email)).first();
+        Document doc = mongocollection.find(Filters.eq("email", email)).first();
         Staff result = gson.fromJson(doc.toJson(), Staff.class);
         return result;
     }
@@ -53,25 +38,25 @@ public class db {
         
         public void updateStaff(Staff s) {
         Document doc = Document.parse(gson.toJson(s));
-        collection.replaceOne(Filters.eq("email", s.getEmail()), doc);
+        mongocollection.replaceOne(Filters.eq("email", s.getEmail()), doc);
     }
         
         //Question 3
         public void updateStaffEmail( String name,String newEmail) {
        
-        collection.updateOne(Filters.eq("name",name), Updates.set("email",newEmail));
+        mongocollection.updateOne(Filters.eq("name",name), Updates.set("email",newEmail));
     }
        
         //Question 5
     public void deleteStaff(String name) {
-        collection.deleteOne(Filters.eq("name", name));
+        mongocollection.deleteOne(Filters.eq("name", name));
     }
 
     
     //Question 4
         public ArrayList<Staff> getStaffbyAge(int age) {
         ArrayList<Staff> result = new ArrayList();
-        ArrayList<Document> docs = collection.find(Filters.eq("age", age)).into(new ArrayList<Document>());
+        ArrayList<Document> docs = mongocollection.find(Filters.eq("age", age)).into(new ArrayList<Document>());
         for (int i = 0; i < docs.size(); i++) {
             String jsonResult = docs.get(i).toJson();
             result.add(gson.fromJson(jsonResult, Staff.class));
@@ -81,7 +66,7 @@ public class db {
 
 
         public void close() {
-        client.close();
+        mongoclient.close();
     }
 }
 
