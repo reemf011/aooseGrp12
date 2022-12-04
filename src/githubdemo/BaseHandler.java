@@ -9,9 +9,23 @@ package githubdemo;
  *
  * @author DeS
  */
-abstract class BaseHandler {
-    Handler nextHandler;
-    public void SetNext(Handler nextHandler){}
-    public void Handle(FeedbackDetails feedback){}
-    
+public abstract class BaseHandler implements Handler {
+	private Handler next;
+        
+        @Override
+    public void SetNext(Handler nextHandle){
+		this.next = nextHandle;
+
+	}
+
+    @Override
+    public  void Handle(FeedbackDetails feedback)
+            {
+		if (next != null) {
+			next.Handle(feedback);
+		}
+            }
 }
+    
+            
+

@@ -14,3 +14,4 @@ public interface Handler {
     public void SetNext(Handler nextHandle);
     public void Handle(FeedbackDetails feedback);
 }
+
